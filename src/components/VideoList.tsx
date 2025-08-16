@@ -2,7 +2,8 @@
 
 import { SyntheticEvent, useContext, useEffect, useState } from "react";
 import { PlayerContext } from "../context/player-context";
-import { mockVideos } from "../page";
+import { mockVideos } from "@/constants";
+import Link from "next/link";
 
 export const VideoList = () => {
   const [videos, setVideos] = useState(mockVideos);
@@ -16,13 +17,14 @@ export const VideoList = () => {
   );
 };
 
-export const VideoItem = ({ video }: any) => {
+export const VideoItem = ({ video }: { video: any }) => {
   const { setSelectedVideo, setShowMiniPlayer } =
     useContext<any>(PlayerContext);
 
   const handleVideoSelect = () => {
     setSelectedVideo(video);
     setShowMiniPlayer(false);
+    console.log(video);
   };
 
   return (
@@ -56,14 +58,14 @@ export const VideoItem = ({ video }: any) => {
           </svg>
         </div>
       </div>
-      <div className="mt-2">
+      <Link href={video.title} className="mt-2">
         <h3 className="text-md font-semibold text-gray-800 dark:text-white">
           {video.title}
         </h3>
         <p className="text-sm text-gray-500 dark:text-gray-400">
           {video.channel}
         </p>
-      </div>
+      </Link>
     </div>
   );
 };

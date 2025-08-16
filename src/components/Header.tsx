@@ -15,7 +15,7 @@ export const Header = () => (
         />
       </svg>
       <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-        ReactTube
+        YourTube
       </h1>
     </div>
     <div className="w-full max-w-md hidden sm:block">

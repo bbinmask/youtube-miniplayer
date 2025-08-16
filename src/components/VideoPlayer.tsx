@@ -13,7 +13,7 @@ export const VideoPlayer = () => {
 
   const handleMinimize = () => {
     setVideoForMiniPlayer(selectedVideo);
-    setSelectedVideo(null); // Deselect to hide the main player
+    setSelectedVideo(null);
     setShowMiniPlayer(true);
   };
 
@@ -21,18 +21,21 @@ export const VideoPlayer = () => {
 
   return (
     <div className="p-4 sm:p-6">
-      <div
-        className="relative"
-        style={{ paddingBottom: "56.25%" /* 16:9 Aspect Ratio */ }}
-      >
-        <iframe
-          className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
-          src={videoSrc}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+      <div className="w-full flex gap-16">
+        <div className="relative w-2/3 aspect-video">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full rounded-lg "
+            src={videoSrc}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="w-1/3">
+          <h1 className="text-xl text-white font-black">
+            {selectedVideo.title}
+          </h1>
+        </div>
       </div>
       <div className="mt-4 flex justify-between items-start">
         <div>
