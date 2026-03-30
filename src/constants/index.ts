@@ -41,10 +41,4 @@ export const mockVideos = [
     channel: "Fireship",
     thumbnail: "https://i.ytimg.com/vi/Tdk2R240a8I/hq720.jpg",
   },
-  {
-    id: "LDB4uaJ87e0",
-    title: "Next.js in 100 Seconds",
-    channel: "Fireship",
-    thumbnail: "https://i.ytimg.com/vi/LDB4uaJ87e0/hq720.jpg",
-  },
 ];
